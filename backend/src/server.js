@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import taskRoutes from './routes/taskRoutes.js';
 import { connectDB } from './config/db.js';
 import path from 'path';
+import rateLimiter from './middleware/rateLimiter.js';
 
 dotenv.config();
 
@@ -17,6 +18,9 @@ app.use(cors({
 
 // middleware
 app.use(express.json());
+
+// ratelimiter
+app.use(rateLimiter);
 
 //routes
 app.use("api/tasks", taskRoutes);
