@@ -1,4 +1,4 @@
-import Task from "../models/Tasks";
+import Task from "../models/Tasks.js";
 
 export async function getAllTask(_, res) {
     try {
@@ -8,6 +8,18 @@ export async function getAllTask(_, res) {
         console.error("Error fetching tasks: ", error);
         res.status(500).json({message: "Internal server error"}); 
     }
+}
+
+export async function getSpecificTask(req, res) {
+    try {
+        const specificTask = await Task.findById(req.params.id);
+        if(!specificTask) return res.status(404).json({message: "Task not Found"})
+        res.status(200).json(specificTask);
+    } catch (error) {
+        console.error("Error fetching tasks: ", error);
+        res.status(500).json({message: "Internal server error"}); 
+    }
+    
 }
 
 export async function createTask(req, res) {
