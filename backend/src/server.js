@@ -1,7 +1,7 @@
 import express from 'express';
 import TaskRoutes from './routes/TaskRoutes.js';
 import dotenv from 'dotenv';
-import connectDB from '../config/db.js';
+import connectDB from './config/db.js';
 import rateLimiter from './middleware/RateLimiter.js';
 
 dotenv.config();
