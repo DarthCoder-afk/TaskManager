@@ -16,7 +16,7 @@ const NavBar = () => {
                     <div className='justify-end'>
                         <label className="swap swap-rotate">
                         {/* this hidden checkbox controls the state */}
-                        <input type="checkbox" className="theme-controller" value="dark" />
+                        <input type="checkbox" className="theme-controller" value="night" />
 
                         {/* sun icon */}
                         <svg
