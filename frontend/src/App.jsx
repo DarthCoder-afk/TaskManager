@@ -6,16 +6,15 @@ import TaskDetailPage from './pages/TaskDetailPage.jsx'
 
 const App = () => {
   return (
-    <div>
-      <div>
-        <Routes>
-          <Route path="/" element={<HomePage />}/>
-          <Route path="/create" element={<CreatePage />} />
-          <Route path="/:id" element={<TaskDetailPage/>}/>
-        </Routes>
-      </div>
-      
+   
+    <div data-theme="lemonade">
+      <Routes>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/create" element={<CreatePage />} />
+        <Route path="/:id" element={<TaskDetailPage/>}/>
+      </Routes>
     </div>
+      
   )
 }
 
